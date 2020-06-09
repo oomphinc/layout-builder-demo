@@ -1,0 +1,27 @@
+demo_layout__one_column:
+  label: 'One Column'
+  path: layouts/one-column
+  template: layout--one-column
+  class: Drupal\demo_layout\Plugin\Layout\OneColumnLayout
+  category: 'Columns: 1'
+  default_region: first
+  icon_map:
+    - [first]
+  regions:
+    first:
+      label: First
+
+demo_layout__two_column:
+  label: 'Two Column'
+  path: layouts/two-column
+  template: layout--two-column
+  class: Drupal\demo_layout\Plugin\Layout\TwoColumnLayout
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second

@@ -1,0 +1,15 @@
+<?php
+
+declare(strict_types = 1);
+
+/**
+ * Implements hook_plugin_filter_TYPE__CONSUMER_alter().
+ */
+function demo_layout_plugin_filter_layout__layout_builder_alter(array &$definitions): void {
+  // Remove all non-demo layouts from Layout Builder.
+  foreach ($definitions as $id => $definition) {
+    if (!preg_match('/^demo_layout__/', $id)) {
+      unset($definitions[$id]);
+    }
+  }
+}

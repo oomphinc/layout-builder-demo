@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a one-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ * - settings: The custom form settings for the layout.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set row_classes = [
+    'row',
+    'demo-layout__row',
+    'demo-layout__row--one-column'
+  ]
+%}
+
+{% if content %}
+  {% if settings.background_color %}
+    <div class="demo-layout__background-color--{{ settings.background_color }}">
+  {% endif %}
+      <div{{ attributes.addClass( row_classes|join(' ') ) }}>
+        <div {{ region_attributes.first.addClass('column', 'column--first') }}>
+          {{ content.first }}
+        </div>
+      </div>
+  {% if settings.background_color %}
+    </div>
+  {% endif %}
+{% endif %}
+

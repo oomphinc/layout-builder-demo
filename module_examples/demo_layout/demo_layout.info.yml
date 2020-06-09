@@ -1,0 +1,8 @@
+name: Demo Layout
+description: Custom layout builder functionality for our theme.
+type: module
+core: 8.x
+package: Demo
+
+dependencies:
+  - drupal:layout_builder
